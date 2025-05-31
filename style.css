@@ -1,3 +1,4 @@
+/* إعدادات الصفحة الأساسية */
 body {
     font-family: Arial, sans-serif;
     direction: rtl;
@@ -21,11 +22,11 @@ header {
 }
 
 .profile-image {
-    width: 120px; /* حجم الصورة */
+    width: 120px;
     height: 120px;
-    border-radius: 50%; /* يجعلها دائرية */
-    border: 3px solid #fff; /* إطار أنيق */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* ظل خفيف */
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 /* تنسيق القائمة */
@@ -58,4 +59,66 @@ section {
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق المشاريع */
+.project {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project img {
+    width: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+}
+
+/* تنسيق الصور داخل صفحات المشاريع */
+.project-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.project-images img {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-images img:hover {
+    transform: scale(1.05);
+}
+
+/* تنسيق روابط GitHub */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* تحسين تجربة المستخدم */
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+h2 {
+    color: #555;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
 }
