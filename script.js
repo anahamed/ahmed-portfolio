@@ -9,11 +9,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // وظيفة التمييز اللوني عند النقر
     function highlightSection(section) {
+        // إزالة التمييز من جميع الأقسام
         document.querySelectorAll("section").forEach(sec => sec.style.backgroundColor = "#fff");
-        section.style.backgroundColor = "#EAD7C0"; // لون بيج دافئ يناسب التصميم
+
+        // تحديد اللون الجديد (بني)
+        section.style.backgroundColor = "#EAD7C0"; // بني مميز يناسب التصميم
     }
 
-    // إضافة الحدث عند النقر
+    // إضافة الحدث عند النقر على الرابط
     if (aboutLink) {
         aboutLink.addEventListener("click", function(event) {
             event.preventDefault();
@@ -27,11 +30,4 @@ document.addEventListener("DOMContentLoaded", function() {
             highlightSection(contactSection);
         });
     }
-
-    // فتح الصورة في نافذة جديدة عند النقر
-    document.querySelectorAll('.expandable-image').forEach(img => {
-        img.addEventListener('click', function() {
-            window.open(this.src, '_blank'); // فتح الصورة في صفحة جديدة
-        });
-    });
 });
