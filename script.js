@@ -1,16 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // تحديد الأقسام
     const aboutSection = document.getElementById("about");
     const contactSection = document.getElementById("contact");
 
+    // روابط التنقل
     const aboutLink = document.querySelector("a[href='#about']");
     const contactLink = document.querySelector("a[href='#contact']");
 
+    // وظيفة التمييز اللوني عند النقر
     function highlightSection(section) {
         document.querySelectorAll("section").forEach(sec => sec.style.backgroundColor = "#fff");
-
-        section.style.backgroundColor = "#EAD7C0"; // بيج دافئ يناسب الصفحة
+        section.style.backgroundColor = "#EAD7C0"; // لون بيج دافئ يناسب التصميم
     }
 
+    // إضافة الحدث عند النقر
     if (aboutLink) {
         aboutLink.addEventListener("click", function(event) {
             event.preventDefault();
