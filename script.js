@@ -4,25 +4,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const contactSection = document.getElementById("contact");
 
     // روابط التنقل
-    const aboutLink = document.querySelector("a[href='#about']");
-    const contactLink = document.querySelector("a[href='#contact']");
+    const aboutLink = document.querySelector("nav ul li a[href='#about']");
+    const contactLink = document.querySelector("nav ul li a[href='#contact']");
 
     // وظيفة التمييز اللوني
     function highlightSection(section) {
-        // إعادة تعيين الألوان
-        aboutSection.style.backgroundColor = "#fff";
-        contactSection.style.backgroundColor = "#fff";
+        // إزالة التمييز من جميع الأقسام
+        document.querySelectorAll("section").forEach(sec => sec.style.backgroundColor = "#fff");
 
-        // تحديد لون جديد للقسم المختار
-        section.style.backgroundColor = "#ffeaa7"; // لون مميز
+        // تحديد اللون للقسم المختار
+        section.style.backgroundColor = "#ffeaa7";
     }
 
-    // إضافة الحدث عند النقر
-    aboutLink.addEventListener("click", function() {
-        highlightSection(aboutSection);
-    });
+    // التحقق من أن الروابط تم العثور عليها قبل إضافة الحدث
+    if (aboutLink) {
+        aboutLink.addEventListener("click", function(event) {
+            event.preventDefault(); // منع الانتقال الفوري
+            highlightSection(aboutSection);
+        });
+    }
 
-    contactLink.addEventListener("click", function() {
-        highlightSection(contactSection);
-    });
+    if (contactLink) {
+        contactLink.addEventListener("click", function(event) {
+            event.preventDefault(); // منع الانتقال الفوري
+            highlightSection(contactSection);
+        });
+    }
 });
